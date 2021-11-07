@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.0"
+}
+
+group 'io.ib67'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.codemc.io/repository/nms-local/' }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'com.github.iceBear67:DiscoverMe:f3a41d60af'
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-20210611.090634-18'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        duplicatesStrategy DuplicatesStrategy.INCLUDE
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}

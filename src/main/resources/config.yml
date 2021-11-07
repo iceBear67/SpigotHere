@@ -1,0 +1,6 @@
+# motd for players in LAN, '&' is supported
+# Leave it empty to use motd from server.properties
+motd: ''
+
+# should we enable
+enable: true

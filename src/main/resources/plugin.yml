@@ -1,0 +1,5 @@
+name: SpigotHere
+main: io.ib67.SpigotHere
+version: @version@
+author: iceBear67
+description: Allows your server to be discovered by Minecraft LAN Discovery.
